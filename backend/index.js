@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const path = require("path");
 const config = require("../config");
 const accounts = require("./routes/accounts");
+const clientNotifier = require("./errors/clientNotifier");
+const errorLogger = require("./errors/errorLogger");
 
 const app = express();
 
@@ -28,5 +30,13 @@ mongoose.connection.on("error", (err) =>
 
 app.use("/account", accounts);
 app.get("/", (req, res) => res.send("Hello World!"));
+app.use((req, res, next) =>
+  res.status(404).json({
+    success: false,
+    msg: "Page not found",
+  })
+);
+app.use(errorLogger);
+app.use(clientNotifier);
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));

@@ -1,0 +1,27 @@
+$menuWidth: 100vw / 3;
+
+.nav-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  width: $menuWidth;
+  background-color: #fff6b6;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 1000;
+  mat-tree,
+  mat-tree * {
+    background-color: inherit;
+  }
+}
+
+.nav-menu.hide {
+  transform: translate3d($menuWidth * -1, 0, 0);
+}
+
+.nav-menu.show {
+  transform: translate3d(0, 0, 0);
+  overflow: hidden;
+  border-right: 5px double blue;
+}

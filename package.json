@@ -13,6 +13,7 @@
   "author": "BIQ-Cat",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "async": "^3.2.4",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.18.1",
