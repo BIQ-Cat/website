@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class NavBarService {
   private show = false;
+  badNav = false;
   invert() {
     this.show = !this.show;
   }

@@ -12,4 +12,16 @@ export class AppComponent {
   navBarClick() {
     this.NavBar.invert();
   }
+  toolBarClass() {
+    if (this.NavBar.badNav) return 'warn';
+    return 'primary';
+  }
+  isGoodNav = () => !this.NavBar.badNav;
+
+  linesPath() {
+    let result = '/assets/';
+    if (this.NavBar.badNav) result += 'bad_lines.png';
+    else result += 'good_lines.png';
+    return result;
+  }
 }

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NavBarService } from 'src/app/nav-bar.service';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss'],
+  selector: 'app-not-found',
+  templateUrl: './not-found.component.html',
+  styleUrls: ['./not-found.component.scss'],
 })
-export class IndexComponent implements OnInit {
+export class NotFoundComponent implements OnInit {
   constructor(private navBar: NavBarService) {
-    navBar.badNav = false;
+    navBar.badNav = true;
     navBar.close();
   }
 

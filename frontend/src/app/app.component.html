@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar [color]="toolBarClass()">
   <button
     mat-icon-button
     aria-label="Navigation menu button"
@@ -6,7 +6,7 @@
   >
     <mat-icon title="Navigation menu">menu</mat-icon>
   </button>
-  <span>BIQ-Cat</span>
+  <span><a routerLink="">BIQ-Cat</a></span>
   <span class="space"></span>
   <button mat-icon-button aria-label="Dashboard icon">
     <mat-icon title="Dashboard">account_circle</mat-icon>
@@ -14,3 +14,7 @@
 </mat-toolbar>
 <app-side-menu></app-side-menu>
 <router-outlet></router-outlet>
+<img [src]="linesPath()" alt="Lines" id="lines" />
+<footer *ngIf="isGoodNav()">
+  <span>GPL v.3.1 &copy;2022. BIQ-Cat</span>
+</footer>
